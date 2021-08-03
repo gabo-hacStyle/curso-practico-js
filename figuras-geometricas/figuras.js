@@ -1,5 +1,14 @@
+//VALORES GENERALES
+const perimetro = {
+    MEDIDA: 'cm',
+    NOMBRE: 'Perímetro'
+};
+const area = {
+    MEDIDA: 'cm^2',
+    NOMBRE: 'Área'
+};
+
 //Código del Cuadrado
-console.group('Cuadrado')
 //Input donde el usuario digita el numero
 const input = document.getElementById('lado-cuadrado');
 //Valor en entero
@@ -11,22 +20,29 @@ const btPeriCuadrado = document.getElementById('perimetro-cuadrado-boton');
 const periContainer = document.getElementById('perime-container');
 const areaContainer = document.getElementById('area-container')
 
+//Funcion que permite hallar el perimetro
 const perimetroCuadrdo = (lado) =>{
     const perimetro = lado * 4;
     return perimetro;
 }
+//Función que permite hallar el área
 const areaCuadrado = (lado) => {
     const area = lado * lado;
-    areaContainer.after(`Hello ${area}`)
+    return area;
 }
+//Función template* que muestra todo
+const muestra = (container, termino, funcion, medida) => {
+    container.innerHTML = `<span> ${termino} de: ${funcion(medidaCuadrado)}${medida}`;
+}
+//Muestra especificamente el permietro
+const muestraPerimetro = muestra(periContainer, perimetro.NOMBRE, perimetroCuadrdo, perimetro.MEDIDA);
+//Muestra especificamente el área
+const muestrArea = muestra(areaContainer, area.NOMBRE , areaCuadrado, area.MEDIDA);
+//ARREGLAR AQUI. LAS FUNCIONES NO TIENEN QUE VENIR CON () PORQUE O SINO SE EJECUTAN ANTES SIN EL addEventListener
+btAreaCuadrado.addEventListener('click', muestrArea);
+btPeriCuadrado.addEventListener('click', muestraPerimetro);
 
-btPeriCuadrado.addEventListener('click', areaCuadrado(medidaCuadrado));
 
-console.log(
-    ` Área: ${areaCuadrado}cm2
-    Perímetro: ${perimetroCuadrdo}cm
-    Lado: ${medidaCuadrado}cm`
-)
 
 //Código del Triángulo
 console.group('Triangulos')
