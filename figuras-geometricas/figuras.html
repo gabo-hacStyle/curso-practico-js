@@ -16,14 +16,20 @@
     <section id="main">
         <section id="cuadrado">
             <h2>Cuadrado</h2>
-            <label>
-                Medida de los lados
-                <input type="text" name="" id="lado-cuadrado">
-            </label>
-            <div class="botones">
-                <button id="perimetro-cuadrado-boton">Perímetro</button>
-                <button id="area-cuadrado-boton">Área</button>
+            <div>
+                <p>
+                    Vamos a calcular la medida de un cuadrado        
+                </p>
             </div>
+            <div>
+                <form action="">
+                    <label for="InputCuadrado">Escribe cuanto miden los lados del cuadrado</label>
+                    <input type="number" id="InputCuadrado"> 
+                    <button type="button"  onclick="calcularPerimCuadrado()">Perímetro</button>
+                    <button type="button" onlick="calcularAreaCuadrado()">Área</button>
+                </form>
+            </div>
+            
             <div id="area-container"></div>
             <div id="perime-container"></div>
         </section>
