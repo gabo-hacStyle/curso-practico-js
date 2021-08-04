@@ -1,56 +1,38 @@
-//VALORES GENERALES
-const perimetro = {
-    MEDIDA: 'cm',
-    NOMBRE: 'Perímetro'
-};
-const area = {
-    MEDIDA: 'cm^2',
-    NOMBRE: 'Área'
-};
-    
 //Código del Cuadrado
 
-
-//Contenedores donde apareceran los valores
-//const periContainer = document.getElementById('perime-container');
-//const areaContainer = document.getElementById('area-container');
-
-//Funcion que permite hallar el perimetro
+//Funciones que calculan el area y perimetro
 const perimetroCuadrdo = (lado) => lado * 4;
-//Función que permite hallar el área
+
 const areaCuadrado = (lado) => lado * lado;
-//Función template* que muestra todo
-/**const muestra = (container, termino, funcion, medida) => {
-    container.innerHTML = `<span> ${termino} de: ${funcion(medidaCuadrado)}${medida}`;
-}*/
-const calcularPerimCuadrado = () => {
+
+//Función con los elementos HTML
+const HTMLelementsCuadrado = () => {
     const input = document.getElementById('InputCuadrado');
     //Valor en entero
-    const ladoCuadrado = parseInt(input.value);
+    const lado = parseInt(input.value);
+    return lado;
+}
 
-    const perimetro = perimetroCuadrdo(ladoCuadrado);
+const calcularPerimCuadrado = () => {
+    //Llamando la funcion con los valores
+    const valor = HTMLelementsCuadrado();
+    const perimetro = perimetroCuadrdo(valor);
     alert(`Tenemos que el perimetro es igual a ${perimetro}`);
 }
 const calcularAreaCuadrado = () => {
-    const input = document.getElementById('InputCuadrado');
-    //Valor en entero
-    const ladoCuadrado = parseInt(input.value);
+    //Llamando la funcion con los valores
+    const valor = HTMLelementsCuadrado();
 
-    const area = areaCuadrado(ladoCuadrado);
+    const area = areaCuadrado(valor);
     alert(`Tenemos que el área es igual a ${area}`);
 }
 
 
 //Código del Triángulo
 
-
-/**document.write(`Los lados miden: 
-a: ${aTriangulo}cm, b: ${bTriangulo}cm, y la base: ${baseTriangulo}cm. `);
-console.log(`La altura es igual a ${alturaTriangulo}.`);*/
+//Funciones que calculan el area y perimetro
 const perimetroTriangulo = (ladoA, ladoB, ladoBase) => ladoA + ladoB + ladoBase;
 const areaTriangulo = (ladoBase, alturaTriangulo) => (ladoBase * alturaTriangulo)/2;
-/** document.write(` y el area es igual a ${areaTriangulo(baseTriangulo, alturaTriangulo)}`)
-document.write(`El triángulo tiene un perimetro de  ${perimetroTriangulo(aTriangulo, bTriangulo, baseTriangulo)}`);*/
 
 const calcularPerimTriangulo = () =>{
     //Lado a del triángulo
@@ -83,27 +65,33 @@ const calcularAreaTriangulo = () =>{
 
 //Código para el circulo
 
+//Valor de PI
 const pi = Math.PI;
 
+//Funciones que calculan el area y circunferencia
 const valorCircunferencia = (diametro) => pi * diametro;
 const areaCirculo = (radio) => (radio * radio) * pi;
 
-
-
-const calcularCircunferencia = () =>{
+//Función con los elementos HTML
+const HTMLelementsCirculo = () => {
     const input = document.getElementById('InputRadio');
     const value = parseInt(input.value);
-    //Determinando el diametro
-    const diametro = value * 2;
+    return value;
+}
 
-    console.log(diametro)
+const calcularCircunferencia = () =>{
+    //Elementos del HTML
+    const valor  = HTMLelementsCirculo();
+    //Determinando el diametro
+    const diametro = valor * 2;
+
     const circunferencia = valorCircunferencia(diametro);
     alert(`Tenemos que el área es igual a ${circunferencia}`)
 }
 const calcularAreaCirculo = () =>{
-    const input = document.getElementById('InputRadio');
-    const value = parseInt(input.value);
+    //Elementos del HTML
+    const valor = HTMLelementsCirculo();
 
-    const area = areaCirculo(value);
+    const area = areaCirculo(valor);
     alert(`Tenemos que el área es igual a ${area}`)
 }
