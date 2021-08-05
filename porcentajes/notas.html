@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculando notas</title>
+</head>
+<body>
+    <h1>Vamos a calcular la nota que obtuviste de acuerdo a tus respuestas correctas    </h1>
+
+    <section class="main">
+        <h2>Llena los datos</h2>
+        <div>
+            <form action="">
+                <label for="InputCorrectas">Preguntas correctas que obtuviste</label>
+                <input type="number" id="InputCorrectas">
+                <label for="InputPreguntas">Numero total de preguntas</label>
+                <input type="number" id="InputPreguntas"> 
+                <label for="InputNotaMayor">¿Sobre cúanto te califican?</label>
+                <input type="number" id="InputNotaMayor">
+                <button type="button" onclick="calcularNota()">Calcular Nota</button>
+
+                <p id="ResultadoNota"></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="notas.js"></script>
+</body>
+</html>
