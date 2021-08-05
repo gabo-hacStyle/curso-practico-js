@@ -1,17 +1,19 @@
-const formula = (lado, base) => {
-    const catetoA = base/2;
-    const catetoB = lado;
-    const h = Math.sqrt(catetoA*catetoA - catetoB*catetoB);
-    console.log(h);
+const formula = (a, base) => {
+    const catetoBase = base / 2 ;
+    const hipotenusa = a;
+    const  p = (Math.sqrt((catetoBase* catetoBase) + (hipotenusa * hipotenusa)));
+    return p;
 }
 
 const calcularAltura = () => {
-    const InputBase = document.getElementById('InputBase');
+    const inputBase = document.getElementById('InputBase');
     const inputIguales = document.getElementById('InputIguales');
 
-    const base = parseInt(InputBase.value);
+    //Datos en medidas de enteros
+    const base = parseInt(inputBase.value);
     const lados = parseInt(inputIguales.value);
 
+    //Llamando la función de la formula con los datos del usuario como argumentos
     const altura = formula(lados, base);
 
     alert(`La altura del triangulo es igual a: ${altura}`)
