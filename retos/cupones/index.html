@@ -10,9 +10,28 @@
     <h1>Vamos a calcular los descuentos de productos de acuerdo a sus descuentos</h1>
 
     <section id="main">
-        <h2></h2>
-    </section>
+        <h2>Vamos a calcular el precio final</h2>
 
+        <div>
+            <form action="">
+                <label for="InputPrecio">Escribe el precio original</label>
+                <input type="number" name="" id="InputPrecio">
+
+                <p>Selecciona el tipo de cupon que tienes</p>
+                <button type="button" onclick="descuentoCupon1()">
+                    Descuento con el Cupón 1
+                </button>
+                <button type="button" onclick="descuentoCupon2()">
+                    Descuento con el Cupón 2
+                </button>
+                <button type="button" onclick="descuentoCuponEspecial()">
+                    Descuento con el Cupón Especial 'DASD'
+                </button>
+            </form>
+        </div>
+
+        <p id="ResultadoParrafo"></p>
+    </section>
     <script src="./cupones.js"></script>
 </body>
 </html>

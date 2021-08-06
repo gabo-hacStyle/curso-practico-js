@@ -1,28 +1,31 @@
-prompt(`lol`);
 const cupones = {   
-    Anna: 10,
-    Gabriel: 15,
+    cupon1: 10,
+    cupon2: 15,
     dads: 48
 }
 const formula = (precio, cupon) => (precio * (100 - cupon)) / 100;
 
-const mostrar =  (resultado, contenedor) => contenedor.innerText = resultado; 
+const mostrar =  (resultado, contenedor) => contenedor.innerText = `El resultado total con el descuento del cupon aplicado es de ${resultado} pesos`; 
 
 const calcularDescuento = () => {
-    let dato = 'Gabriel';
-    if(dato === cupones.Anna || dato === cupones.Gabriel || dato === cupones.dads){
-        if(dato === cupones.Anna){
-            const i = formula(dato, undefined);
-            mostrar(i, undefined);
-        } else if (dato === cupones.Gabriel){
-            const e = formula(dato, undefined);
-            mostrar(e, undefined);
+    const contenedor = document.getElementById('ResultadoParrafo');
+    const precio = 30;
+    let dato = 'cupon2';
+    if(dato === cupones.cupon1 || dato === cupones.cupon2 || dato === cupones.dads){
+        if(dato === cupones.cupon1){
+            dato = cupones.cupon1;
+            const i = formula(precio, dato);
+            mostrar(i, contenedor);
+        } else if (dato === cupones.cupon2){
+            dato = cupones.cupon2;
+            const e = formula(precio, dato);
+            mostrar(e, contenedor);
         } else if (dato === cupones.dads) {
-            const f  = formula(dato, undefined);
-            mostrar(f, undefined);
+            dato = cupones.dads;
+            const f  = formula(precio, dato);
+            mostrar(f, contenedor);
         }
     } else {
-        let resultado = `No es el nombre de un cupon valido`;
-        mostrar(resultado, undefined);
+        contenedor.innerText = `Los datos colocados no son validos. Coloca otro cupón.`
     }
 }
