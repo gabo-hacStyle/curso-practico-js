@@ -18,13 +18,21 @@ const calcularPromedio = (lista) => {
 
 // caalcularPromedio([8, 10]);
 
+
+
 //Calculando la mediana
 
 
-const lista2 = [12, 13, 43, 65, 2000000];
+const lista2 = [12, 13, 2000000, 43, 65, 90 ];
 
 
-const calcularMediana = (lista) => {
+const calcularMediana = (array) => {
+
+    const lista = array.sort((a, b) => a - b);
+
+    console.log(lista)
+
+
     let mediana;
     const mitadLista = Math.floor(lista.length / 2);
     
@@ -61,3 +69,33 @@ const calcularMediana = (lista) => {
 
 calcularMediana(lista2);
 
+
+//Calcular la moda
+//Lista
+const listaModa = [1, 2, 3, 4, 1, 2, 2, 3, 3, 4, 4, 4, 4, 2, 3, 1, 2, 3, 4, 4,2, 2, 1, 1, 2, 1, 2, 3, 3, 4];
+
+const calcularModa = (lista) => {
+    //Creamos un objeto transformando el array anterior
+    const lista1Count = {};
+
+    //Lo vamos llenando el objeto con un metodo de los arrays
+    //.map va a recorrer el array
+    lista.map(
+        (elemento) => {
+            if(lista1Count[elemento]){
+                lista1Count[elemento] += 1;
+            }
+            else {
+                lista1Count[elemento] = 1;
+            }
+        })
+
+    //Un objeto para convertirlo en array
+    //Y luego miramos el numero que mas se repite con .sort
+    const listaArray = Object.entries(lista1Count).sort(
+        (valorAcumulado, nuevoValor) => valorAcumulado[1] - nuevoValor[1]
+    );
+    const moda = listaArray[listaArray.length - 1];
+        console.log(moda)
+}
+calcularModa(listaModa);
