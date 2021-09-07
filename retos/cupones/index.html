@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 2 - Calculando descuentos con cupones</title>
+</head>
+<body>
+    <h1>Vamos a calcular los descuentos de productos de acuerdo a sus descuentos</h1>
+
+    <section id="main">
+        <h2>Vamos a calcular el precio final</h2>
+
+        <div>
+            <form action="">
+                <label for="InputPrecio">Escribe el precio original</label>
+                <input type="number" name="" id="InputPrecio">
+
+                <p>Selecciona el tipo de cupon que tienes</p>
+                <button type="button" onclick="descuentoCupon1()">
+                    Descuento con el Cupón 1 (10%)
+                </button>
+                <button type="button" onclick="descuentoCupon2()">
+                    Descuento con el Cupón 2 (15%)
+                </button>
+                <button type="button" onclick="descuentoCuponEspecial()">
+                    Descuento con el Cupón Especial (50%) 
+                </button>
+            </form>
+        </div>
+
+        <p id="ResultadoParrafo"></p>
+    </section>
+    <script src="./cupones.js"></script>
+</body>
+</html>
